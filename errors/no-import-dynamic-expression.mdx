@@ -1,0 +1,16 @@
+---
+title: No import dynamic expression
+---
+
+> `import()` paths cannot be dynamic expressions.
+
+## Why This Error Occurred
+
+Webpack and Turbopack both require that the argument passed to `import()` must be a string constant
+so that the import target can be determined at build time.
+
+## Possible Ways to Fix It
+
+1. For each possible `import()` target, create a separate hard-coded case. For instance, instead of
+   `import(isBaby ? "grogu" : "yoda")`, you could write `isBaby ? import("grogu) : import("yoda")`.
+2. Perform a `fetch` to retrieve the target script and run it with `eval`.
