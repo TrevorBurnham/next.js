@@ -1,9 +1,9 @@
-import { defineRule } from '../utils/define-rule'
+import { defineRule } from '../utils/define-rule.js'
 import * as path from 'path'
 
 const url = 'https://nextjs.org/docs/messages/no-document-import-in-page'
 
-export = defineRule({
+export default defineRule({
   meta: {
     docs: {
       description:

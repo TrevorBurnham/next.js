@@ -1,14 +1,14 @@
-import { defineRule } from '../utils/define-rule'
+import { defineRule } from '../utils/define-rule.js'
 import * as path from 'path'
 import * as fs from 'fs'
-import { getRootDirs } from '../utils/get-root-dirs'
+import { getRootDirs } from '../utils/get-root-dirs.js'
 
 import {
   getUrlFromPagesDirectories,
   normalizeURL,
   execOnce,
   getUrlFromAppDirectory,
-} from '../utils/url'
+} from '../utils/url.js'
 
 const pagesDirWarning = execOnce((pagesDirs) => {
   console.warn(
@@ -37,7 +37,7 @@ const cachedGetUrlFromAppDirectory = memoize(getUrlFromAppDirectory)
 
 const url = 'https://nextjs.org/docs/messages/no-html-link-for-pages'
 
-export = defineRule({
+export default defineRule({
   meta: {
     docs: {
       description:

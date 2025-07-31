@@ -1,4 +1,4 @@
-import { defineRule } from '../utils/define-rule'
+import { defineRule } from '../utils/define-rule.js'
 
 const url = 'https://nextjs.org/docs/messages/no-async-client-component'
 const description = 'Prevent Client Components from being async functions.'
@@ -8,7 +8,7 @@ function isCapitalized(str: string): boolean {
   return /[A-Z]/.test(str?.[0])
 }
 
-export = defineRule({
+export default defineRule({
   meta: {
     docs: {
       description,

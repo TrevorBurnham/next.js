@@ -1,4 +1,4 @@
-import { defineRule } from '../utils/define-rule'
+import { defineRule } from '../utils/define-rule.js'
 import * as path from 'path'
 
 const NEXT_EXPORT_FUNCTIONS = [
@@ -41,7 +41,7 @@ function minDistance(a, b) {
 }
 
 /* eslint-disable eslint-plugin/require-meta-docs-url */
-export = defineRule({
+export default defineRule({
   meta: {
     docs: {
       description: 'Prevent common typos in Next.js data fetching functions.',

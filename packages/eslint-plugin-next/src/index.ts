@@ -1,47 +1,50 @@
 import type { ESLint, Linter, Rule } from 'eslint'
 
+import googleFontDisplay from './rules/google-font-display.js'
+import googleFontPreconnect from './rules/google-font-preconnect.js'
+import inlineScriptId from './rules/inline-script-id.js'
+import nextScriptForGa from './rules/next-script-for-ga.js'
+import noAssignModuleVariable from './rules/no-assign-module-variable.js'
+import noAsyncClientComponent from './rules/no-async-client-component.js'
+import noBeforeInteractiveScriptOutsideDocument from './rules/no-before-interactive-script-outside-document.js'
+import noCssTags from './rules/no-css-tags.js'
+import noDocumentImportInPage from './rules/no-document-import-in-page.js'
+import noDuplicateHead from './rules/no-duplicate-head.js'
+import noHeadElement from './rules/no-head-element.js'
+import noHeadImportInDocument from './rules/no-head-import-in-document.js'
+import noHtmlLinkForPages from './rules/no-html-link-for-pages.js'
+import noImgElement from './rules/no-img-element.js'
+import noPageCustomFont from './rules/no-page-custom-font.js'
+import noScriptComponentInHead from './rules/no-script-component-in-head.js'
+import noStyledJsxInDocument from './rules/no-styled-jsx-in-document.js'
+import noSyncScripts from './rules/no-sync-scripts.js'
+import noTitleInDocumentHead from './rules/no-title-in-document-head.js'
+import noTypos from './rules/no-typos.js'
+import noUnwantedPolyfillio from './rules/no-unwanted-polyfillio.js'
+
 const rules = {
-  'google-font-display':
-    require('./rules/google-font-display') as typeof import('./rules/google-font-display'),
-  'google-font-preconnect':
-    require('./rules/google-font-preconnect') as typeof import('./rules/google-font-preconnect'),
-  'inline-script-id':
-    require('./rules/inline-script-id') as typeof import('./rules/inline-script-id'),
-  'next-script-for-ga':
-    require('./rules/next-script-for-ga') as typeof import('./rules/next-script-for-ga'),
-  'no-assign-module-variable':
-    require('./rules/no-assign-module-variable') as typeof import('./rules/no-assign-module-variable'),
-  'no-async-client-component':
-    require('./rules/no-async-client-component') as typeof import('./rules/no-async-client-component'),
+  'google-font-display': googleFontDisplay,
+  'google-font-preconnect': googleFontPreconnect,
+  'inline-script-id': inlineScriptId,
+  'next-script-for-ga': nextScriptForGa,
+  'no-assign-module-variable': noAssignModuleVariable,
+  'no-async-client-component': noAsyncClientComponent,
   'no-before-interactive-script-outside-document':
-    require('./rules/no-before-interactive-script-outside-document') as typeof import('./rules/no-before-interactive-script-outside-document'),
-  'no-css-tags':
-    require('./rules/no-css-tags') as typeof import('./rules/no-css-tags'),
-  'no-document-import-in-page':
-    require('./rules/no-document-import-in-page') as typeof import('./rules/no-document-import-in-page'),
-  'no-duplicate-head':
-    require('./rules/no-duplicate-head') as typeof import('./rules/no-duplicate-head'),
-  'no-head-element':
-    require('./rules/no-head-element') as typeof import('./rules/no-head-element'),
-  'no-head-import-in-document':
-    require('./rules/no-head-import-in-document') as typeof import('./rules/no-head-import-in-document'),
-  'no-html-link-for-pages':
-    require('./rules/no-html-link-for-pages') as typeof import('./rules/no-html-link-for-pages'),
-  'no-img-element':
-    require('./rules/no-img-element') as typeof import('./rules/no-img-element'),
-  'no-page-custom-font':
-    require('./rules/no-page-custom-font') as typeof import('./rules/no-page-custom-font'),
-  'no-script-component-in-head':
-    require('./rules/no-script-component-in-head') as typeof import('./rules/no-script-component-in-head'),
-  'no-styled-jsx-in-document':
-    require('./rules/no-styled-jsx-in-document') as typeof import('./rules/no-styled-jsx-in-document'),
-  'no-sync-scripts':
-    require('./rules/no-sync-scripts') as typeof import('./rules/no-sync-scripts'),
-  'no-title-in-document-head':
-    require('./rules/no-title-in-document-head') as typeof import('./rules/no-title-in-document-head'),
-  'no-typos': require('./rules/no-typos') as typeof import('./rules/no-typos'),
-  'no-unwanted-polyfillio':
-    require('./rules/no-unwanted-polyfillio') as typeof import('./rules/no-unwanted-polyfillio'),
+    noBeforeInteractiveScriptOutsideDocument,
+  'no-css-tags': noCssTags,
+  'no-document-import-in-page': noDocumentImportInPage,
+  'no-duplicate-head': noDuplicateHead,
+  'no-head-element': noHeadElement,
+  'no-head-import-in-document': noHeadImportInDocument,
+  'no-html-link-for-pages': noHtmlLinkForPages,
+  'no-img-element': noImgElement,
+  'no-page-custom-font': noPageCustomFont,
+  'no-script-component-in-head': noScriptComponentInHead,
+  'no-styled-jsx-in-document': noStyledJsxInDocument,
+  'no-sync-scripts': noSyncScripts,
+  'no-title-in-document-head': noTitleInDocumentHead,
+  'no-typos': noTypos,
+  'no-unwanted-polyfillio': noUnwantedPolyfillio,
 } as const satisfies Record<string, Rule.RuleModule>
 
 const recommendedRules = {
@@ -113,4 +116,4 @@ const flatConfig = {
 } as const satisfies Record<string, Linter.Config>
 
 export default { ...plugin, flatConfigs: flatConfig }
-export { configs, flatConfig, rules }
+export { configs, flatConfig as flatConfigs, rules }

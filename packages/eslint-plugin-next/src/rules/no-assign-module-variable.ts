@@ -1,7 +1,7 @@
-import { defineRule } from '../utils/define-rule'
+import { defineRule } from '../utils/define-rule.js'
 const url = 'https://nextjs.org/docs/messages/no-assign-module-variable'
 
-export = defineRule({
+export default defineRule({
   meta: {
     docs: {
       description: 'Prevent assignment to the `module` variable.',

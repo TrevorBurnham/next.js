@@ -1,9 +1,9 @@
-import { defineRule } from '../utils/define-rule'
+import { defineRule } from '../utils/define-rule.js'
 import * as path from 'path'
 
 const url = 'https://nextjs.org/docs/messages/no-head-import-in-document'
 
-export = defineRule({
+export default defineRule({
   meta: {
     docs: {
       description: 'Prevent usage of `next/head` in `pages/_document.js`.',

@@ -1,5 +1,5 @@
-import { defineRule } from '../utils/define-rule'
-import NodeAttributes from '../utils/node-attributes'
+import { defineRule } from '../utils/define-rule.js'
+import NodeAttributes from '../utils/node-attributes.js'
 
 const SUPPORTED_SRCS = [
   'www.google-analytics.com/analytics.js',
@@ -19,7 +19,7 @@ const containsStr = (str, strList) => {
   return strList.some((s) => str.includes(s))
 }
 
-export = defineRule({
+export default defineRule({
   meta: {
     docs: {
       description,

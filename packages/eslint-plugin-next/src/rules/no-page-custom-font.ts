@@ -1,5 +1,5 @@
-import { defineRule } from '../utils/define-rule'
-import NodeAttributes from '../utils/node-attributes'
+import { defineRule } from '../utils/define-rule.js'
+import NodeAttributes from '../utils/node-attributes.js'
 import { sep, posix } from 'path'
 import type { AST } from 'eslint'
 
@@ -9,7 +9,7 @@ function isIdentifierMatch(id1, id2) {
   return (id1 === null && id2 === null) || (id1 && id2 && id1.name === id2.name)
 }
 
-export = defineRule({
+export default defineRule({
   meta: {
     docs: {
       description: 'Prevent page-only custom fonts.',

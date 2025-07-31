@@ -1,5 +1,7 @@
-import { globSync } from 'fast-glob'
+import fastGlob from 'fast-glob'
 import type { Rule } from 'eslint'
+
+const { globSync } = fastGlob
 
 /**
  * Process a Next.js root directory glob.

@@ -1,9 +1,9 @@
-import { defineRule } from '../utils/define-rule'
-import NodeAttributes from '../utils/node-attributes'
+import { defineRule } from '../utils/define-rule.js'
+import NodeAttributes from '../utils/node-attributes.js'
 
 const url = 'https://nextjs.org/docs/messages/google-font-preconnect'
 
-export = defineRule({
+export default defineRule({
   meta: {
     docs: {
       description: 'Ensure `preconnect` is used with Google Fonts.',

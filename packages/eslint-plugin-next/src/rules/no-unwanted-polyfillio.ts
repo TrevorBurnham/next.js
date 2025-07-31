@@ -1,4 +1,4 @@
-import { defineRule } from '../utils/define-rule'
+import { defineRule } from '../utils/define-rule.js'
 
 // Keep in sync with next.js polyfills file : https://github.com/vercel/next.js/blob/master/packages/next-polyfill-nomodule/src/index.js
 const NEXT_POLYFILLED_FEATURES = [
@@ -73,7 +73,7 @@ const url = 'https://nextjs.org/docs/messages/no-unwanted-polyfillio'
 //------------------------------------------------------------------------------
 // Rule Definition
 //------------------------------------------------------------------------------
-export = defineRule({
+export default defineRule({
   meta: {
     docs: {
       description: 'Prevent duplicate polyfills from Polyfill.io.',
